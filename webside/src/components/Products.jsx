@@ -5,22 +5,22 @@ export const Products = ({books}) => {
     const [previous, setPrevious] = useState(12);
     const scrollRef = useRef(null);
 
-    useEffect(() => {
-        const scrollInterval = setInterval(() => {
-            if (scrollRef.current) {
-                scrollRef.current.scrollBy({ left: 250, behavior: "smooth" });
+    // useEffect(() => {
+    //     const scrollInterval = setInterval(() => {
+    //         if (scrollRef.current) {
+    //             scrollRef.current.scrollBy({ left: 250, behavior: "smooth" });
 
-                const halfWidth = scrollRef.current.scrollWidth / 2;
-                if (scrollRef.current.scrollLeft >= halfWidth) {
-                    setTimeout(() => {
-                        scrollRef.current.scrollTo({ left: 0, behavior: "instant" });
-                    }, 5000);
-                }
-            }
-        }, 5000);
+    //             const halfWidth = scrollRef.current.scrollWidth / 2;
+    //             if (scrollRef.current.scrollLeft >= halfWidth) {
+    //                 setTimeout(() => {
+    //                     scrollRef.current.scrollTo({ left: 0, behavior: "instant" });
+    //                 }, 5000);
+    //             }
+    //         }
+    //     }, 5000);
 
-        return () => clearInterval(scrollInterval);
-    }, []);
+    //     return () => clearInterval(scrollInterval);
+    // }, []);
 
     useEffect(() => {
         const listBooks = books.slice(0, previous);
